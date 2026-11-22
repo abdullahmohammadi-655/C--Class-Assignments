@@ -1,41 +1,43 @@
+
 #include <iostream>
 using namespace std;
 
-struct Student {
-       int id;
-       string name;
-       string level;
-       string gender;
+enum Gender {
+       Male, 
+       Female
 };
+
+
 
 enum Level {
-      Primary,  // 0
-      Intermediate, // 1
-      Advance // 2
+     Primary,
+     Intermediate,
+     Advance
 };
-
-enum Gender {
-      Male, // 0
-      Female  // 1
-};
-
 
 enum StudentStatus {
-       Active,
-       DeActive
+      Active,
+      Deactivate
 };
 
-int main() {
-
-// pre-defined data type , string , int , bool 
-// use-defined data type: enum
-Gender g = Male;
-Student s1;
-s1.id = 1;
-s1.name = "Ali";
-s1.level = Primary;
-s1.gender = Male;
-
-
-    return 0;
+struct Student {
+     int id;
+     string firstName;
+     string lastName;
+     Gender gender;
+     Level level;
+     StudentStatus status; 
+};
+int main(){
+         Student s1;
+         s1.id = 1;
+         s1.firstName = "Ali";
+         s1.lastName = "Alizada";
+         s1.gender = Male;
+         s1.level = Advance;
+         s1.status = Active;
+         if(s1.gender == Male){
+            cout<<"Male"<<endl;
+         }
+      return 0;
 }
